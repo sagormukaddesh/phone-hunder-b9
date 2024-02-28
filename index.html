@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunting Phone API</title>
+    <!-- tailwind  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="container mx-auto">
+    <header>
+        <h2 class="text-6xl text-center my-10 uppercase font-bold text-zinc-600">Hunting Phone</h2>
+
+    </header>
+
+    <main class="">
+
+        <!-- search buttons  -->
+        <section class="">
+            <div class="flex justify-center items-center mb-8 mt-20 ">
+                <div class="">
+                    <label class="input input-bordered bg-stone-200 w-96 flex mr-3 items-center gap-2">
+                        <input id="search-field" type="text" class="grow" placeholder="Search" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="w-4 h-4  opacity-70">
+                            <path fill-rule="evenodd"
+                                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </label>
+                </div>
+                <div>
+                    <button onclick="handleSearch()"
+                        class="btn bg-amber-400 uppercase px-10 font-bold text-stone-600 text-lg">Search</button>
+                </div>
+            </div>
+
+            <!-- search btn 2  -->
+            <!-- <div class="flex justify-center items-center mb-8 mt-2 mx-6">
+                <div class="">
+                    <label class=" input input-bordered bg-stone-200 w-96 flex mr-3 items-center gap-2">
+                        <input id="search-field2" type="text" class="grow" placeholder="Search" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="w-4 h-4  opacity-70">
+                            <path fill-rule="evenodd"
+                                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </label>
+                </div>
+                <div>
+                    <button onclick="handleSearch2()"
+                        class="btn btn-success uppercase px-10 font-bold text-stone-600 text-lg">Search</button>
+                </div>
+            </div> -->
+        </section>
+
+        <section class="mb-12">
+
+            <!-- spinner start  -->
+            <div id="loading-spinner" class="mx-auto text-center justify-center items-center hidden">
+                <span class=" loading loading-spinner loading-lg"></span>
+            </div>
+            <!-- spinner end -->
+            <div id="phones-container" class=" grid grid-cols-1 lg:grid-cols-4 gap-10">
+
+            </div>
+            <div id="show-all-container" class="my-10 mx-auto text-center justify-center uppercase hidden">
+                <button onclick="handleShowAll()" class="btn px-28 btn-success">Show All</button>
+            </div>
+        </section>
+
+        <!-- modal  -->
+        <!-- Open the modal using ID.showModal() method -->
+
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <h3 id="phone-name" class="font-bold text-lg">Hello!</h3>
+                
+                <div id="show-details-container">
+
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+        <!-- modal end  -->
+
+    </main>
+    <footer> </footer>
+
+    <script src="./scripts/Phone.js"></script>
+</body>
+</html>
